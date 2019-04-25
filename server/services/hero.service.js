@@ -10,17 +10,6 @@ async function getHeroes(req, res) {
   }
 }
 
-// async function getHeroById(context, id) {
-//   let { req, res } = context;
-//   try {
-//     //TODO: refactor to get 1
-//     const { result: heroes } = await container.items.readAll().toArray();
-//     res.status(200).json(heroes);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// }
-
 async function postHero(req, res) {
   const hero = {
     name: req.body.name,

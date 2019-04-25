@@ -1,4 +1,4 @@
 import heroService from './hero.service';
-const villainService = require('./villain.service');
+import villainService from './villain.service';
 
 export { heroService, villainService };

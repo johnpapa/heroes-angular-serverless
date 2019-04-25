@@ -60,4 +60,4 @@ async function deleteVillain(context) {
   }
 }
 
-export { getVillains, postVillain, putVillain, deleteVillain };
+export default { getVillains, postVillain, putVillain, deleteVillain };
