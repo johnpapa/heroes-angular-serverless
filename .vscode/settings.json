@@ -5,5 +5,14 @@
     "activityBar.inactiveForeground": "#e1bfc0",
     "statusBar.background": "#b52e31",
     "statusBar.foreground": "#e7e7e7"
-  }
+  },
+  "azureFunctions.projectRuntime": "~2",
+  "azureFunctions.projectLanguage": "TypeScript",
+  "azureFunctions.deploySubpath": "functions",
+  "azureFunctions.preDeployTask": "npm prune",
+  "files.exclude": {
+    "obj": true,
+    "bin": true
+  },
+  "debug.internalConsoleOptions": "neverOpen"
 }
