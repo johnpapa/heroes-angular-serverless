@@ -15,10 +15,7 @@
       "type": "shell",
       "label": "npm build",
       "command": "npm run build",
-      "dependsOn": [
-        "func: extensions install",
-        "npm install"
-      ],
+      "dependsOn": ["func: extensions install", "npm install"],
       "problemMatcher": "$tsc",
       "options": {
         "cwd": "${workspaceFolder}/functions"
@@ -40,6 +37,35 @@
       "problemMatcher": [],
       "options": {
         "cwd": "${workspaceFolder}/functions"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": ["relative", "cwd"],
+        "pattern": "tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "Compiled |Failed to compile."
+          }
+        }
       }
     }
   ]
