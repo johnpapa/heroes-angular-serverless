@@ -1,4 +1,6 @@
-# Tour of Heroes
+# Heroes Angular Serverless
+
+TypeScript Node/Express 👉TypeScript Serverless ➕Angular
 
 This project was created to help represent a fundamental app written with Angular. The heroes and villains theme is used throughout the app.
 
