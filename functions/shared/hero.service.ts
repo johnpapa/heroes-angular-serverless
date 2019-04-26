@@ -1,7 +1,11 @@
-import containers from './config';
+// import { Response, Request } from 'express';
+import { Context } from '@azure/functions';
+import { containers } from './config';
+import { Hero } from './models';
+
 const { heroes: container } = containers;
 
-async function getHeroes(context) {
+export async function getHeroes(context: Context) {
   const { req, res } = context;
 
   try {
@@ -12,14 +16,9 @@ async function getHeroes(context) {
   }
 }
 
-async function postHero(context) {
+export async function postHero(context: Context) {
   const { req, res } = context;
-  const hero = {
-    name: req.body.name,
-    description: req.body.description,
-    id: undefined
-  };
-  hero.id = `Hero${hero.name}`;
+  const hero = new Hero(req.body.name, req.body.description);
 
   try {
     const { body } = await container.items.create(hero);
@@ -29,13 +28,9 @@ async function postHero(context) {
   }
 }
 
-async function putHero(context) {
+export async function putHero(context: Context) {
   const { req, res } = context;
-  const hero = {
-    id: req.params.id,
-    name: req.body.name,
-    description: req.body.description
-  };
+  const hero = new Hero(req.body.name, req.body.description, req.params.id);
 
   try {
     const { body } = await container.items.upsert(hero);
@@ -45,7 +40,7 @@ async function putHero(context) {
   }
 }
 
-async function deleteHero(context) {
+export async function deleteHero(context: Context) {
   const { req, res } = context;
   const { id } = req.params;
 
@@ -56,5 +51,3 @@ async function deleteHero(context) {
     res.status(500).send(error);
   }
 }
-
-export default { getHeroes, postHero, putHero, deleteHero };

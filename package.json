@@ -1,15 +1,19 @@
 {
-  "name": "heroes-angular",
+  "name": "heroes-angular-serverless",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "start-with-node": "WWW=dist/heroes-angular node server.js",
+    "ng:serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "debug": "WWW=./dist npx nodemon -r dotenv/config --inspect=9229 server.js",
-    "local-proxy-debug": "concurrently \"npm run debug\" \"ng serve --proxy-config proxy.conf.json --open\""
+    "node:build-ts": "tsc -p server",
+    "node:watch-ts": "tsc -w -p server",
+    "node:tslint": "tslint -c tslint.json -p server",
+    "node:debug": "WWW=./dist/heroes-angular-serverless npx nodemon -r dotenv/config --inspect=9229 server/dist/index.js",
+    "node:start": "WWW=./dist/heroes-angular-serverless node -r dotenv/config server/dist/index.js",
+    "node-ng:debug": "concurrently \"npm run node:debug\" \"npm run ng:serve\"",
+    "node-ng:start": "concurrently \"npm run node:start\" \"npm run ng:serve\""
   },
   "private": true,
   "dependencies": {
@@ -22,7 +26,6 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "@azure/cosmos": "^2.1.5",
     "@fortawesome/angular-fontawesome": "^0.3.0",
     "@fortawesome/fontawesome-free": "^5.4.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.7",
@@ -32,10 +35,8 @@
     "@ngrx/store": "^7.4.0",
     "@ngrx/store-devtools": "^7.4.0",
     "angular-font-awesome": "^3.1.2",
-    "body-parser": "^1.18.3",
     "bulma": "^0.7.4",
     "core-js": "^2.5.4",
-    "express": "^4.16.4",
     "font-awesome": "^4.7.0",
     "ngrx-data": "^6.1.0-beta.3",
     "rxjs": "~6.5.1",

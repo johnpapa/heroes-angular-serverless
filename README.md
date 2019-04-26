@@ -25,8 +25,8 @@ Hosted in [Azure](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangular
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/johnpapa/heroes-angular.git
-   cd heroes-angular
+   git clone https://github.com/johnpapa/heroes-angular-serverless.git
+   cd heroes-angular-serverless
    ```
 
 1. Install the npm packages

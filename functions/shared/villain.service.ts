@@ -1,7 +1,11 @@
-import containers from './config';
+// import { Response, Request } from 'express';
+import { Context } from '@azure/functions';
+import { containers } from './config';
+import { Villain } from './models';
+
 const { villains: container } = containers;
 
-async function getVillains(context) {
+export async function getVillains(context: Context) {
   const { req, res } = context;
 
   try {
@@ -12,15 +16,10 @@ async function getVillains(context) {
   }
 }
 
-async function postVillain(context) {
+export async function postVillain(context: Context) {
   const { req, res } = context;
 
-  const villain = {
-    name: req.body.name,
-    description: req.body.description,
-    id: undefined
-  };
-  villain.id = `Villain${villain.name}`;
+  const villain = new Villain(req.body.name, req.body.description);
 
   try {
     const { body } = await container.items.create(villain);
@@ -30,14 +29,14 @@ async function postVillain(context) {
   }
 }
 
-async function putVillain(context) {
+export async function putVillain(context: Context) {
   const { req, res } = context;
 
-  const villain = {
-    id: req.params.id,
-    name: req.body.name,
-    description: req.body.description
-  };
+  const villain = new Villain(
+    req.body.name,
+    req.body.description,
+    req.params.id
+  );
 
   try {
     const { body } = await container.items.upsert(villain);
@@ -47,7 +46,7 @@ async function putVillain(context) {
   }
 }
 
-async function deleteVillain(context) {
+export async function deleteVillain(context: Context) {
   const { req, res } = context;
 
   const { id } = req.params;
@@ -59,5 +58,3 @@ async function deleteVillain(context) {
     res.status(500).send(error);
   }
 }
-
-export default { getVillains, postVillain, putVillain, deleteVillain };
