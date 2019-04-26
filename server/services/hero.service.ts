@@ -1,4 +1,5 @@
 import { Response, Request } from 'express';
+// import { Context } from '@azure/functions';
 import { containers } from './config';
 import { Hero } from './models';
 

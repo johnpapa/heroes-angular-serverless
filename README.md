@@ -8,7 +8,7 @@ This project was created to help represent a fundamental app written with Angula
 
 You created an Angular app and its static assets are served by Node.js. All of your code in Angular and Node are written with TypeScript, because you love how it helps identify and fix issues while you are creating your code. Your data is accessed via the same Node.js server through Express.js hitting a database (in this case Azure's Cosmos DB). This all works beautifully!
 
-Now you want to host the Angular app on a web site in the cloud. You can absolutely host the app and Node in the cloud, but you're thinking it would be great if you could just host the Angular app without Node.js.
+Now you want to host the Angular app on a web site in the cloud. You can absolutely host the app and Node in the cloud, but you're thinking it would be great if you could just host the Angular app without having to worry about a server.
 
 You decide to migrate your Node.js Express APIs to serverless functions, and host your Angular app and its static assets in the cloud!
 

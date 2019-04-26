@@ -5,9 +5,8 @@ import { Hero } from './models';
 
 const { heroes: container } = containers;
 
-export async function getHeroes(context: Context) {
-  const { req, res } = context;
-
+// TODO: log if you want
+export async function getHeroes({ req, res, log }: Context) {
   try {
     const { result: heroes } = await container.items.readAll().toArray();
     res.status(200).json(heroes);
@@ -16,8 +15,7 @@ export async function getHeroes(context: Context) {
   }
 }
 
-export async function postHero(context: Context) {
-  const { req, res } = context;
+export async function postHero({ req, res }: Context) {
   const hero = new Hero(req.body.name, req.body.description);
 
   try {
@@ -28,8 +26,7 @@ export async function postHero(context: Context) {
   }
 }
 
-export async function putHero(context: Context) {
-  const { req, res } = context;
+export async function putHero({ req, res }: Context) {
   const hero = new Hero(req.body.name, req.body.description, req.params.id);
 
   try {
@@ -40,8 +37,7 @@ export async function putHero(context: Context) {
   }
 }
 
-export async function deleteHero(context: Context) {
-  const { req, res } = context;
+export async function deleteHero({ req, res }: Context) {
   const { id } = req.params;
 
   try {
