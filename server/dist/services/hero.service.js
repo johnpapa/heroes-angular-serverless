@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// import { Context } from '@azure/functions';
 const config_1 = require("./config");
 const models_1 = require("./models");
 const { heroes: container } = config_1.containers;
