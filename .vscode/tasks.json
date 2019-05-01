@@ -67,6 +67,11 @@
           }
         }
       }
+    },
+    {
+      "type": "shell",
+      "command": "npm run build -- --prod",
+      "label": "npm run build"
     }
   ]
 }

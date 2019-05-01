@@ -10,9 +10,13 @@
   "azureFunctions.projectLanguage": "TypeScript",
   "azureFunctions.deploySubpath": "functions",
   "azureFunctions.preDeployTask": "npm prune",
+  "azureStorage.preDeployTask": "npm run build",
   "files.exclude": {
     "obj": true,
     "bin": true
   },
-  "debug.internalConsoleOptions": "neverOpen"
+  "debug.internalConsoleOptions": "neverOpen",
+  "appService.zipIgnorePattern": [
+    ".vscode{,/**}"
+  ]
 }

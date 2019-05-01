@@ -5,9 +5,7 @@ import { Villain } from './models';
 
 const { villains: container } = containers;
 
-export async function getVillains(context: Context) {
-  const { req, res } = context;
-
+export async function getVillains({ req, res, log }: Context) {
   try {
     const { result: villains } = await container.items.readAll().toArray();
     res.status(200).json(villains);
@@ -16,9 +14,7 @@ export async function getVillains(context: Context) {
   }
 }
 
-export async function postVillain(context: Context) {
-  const { req, res } = context;
-
+export async function postVillain({ req, res, log }: Context) {
   const villain = new Villain(req.body.name, req.body.description);
 
   try {
@@ -29,9 +25,7 @@ export async function postVillain(context: Context) {
   }
 }
 
-export async function putVillain(context: Context) {
-  const { req, res } = context;
-
+export async function putVillain({ req, res, log }: Context) {
   const villain = new Villain(
     req.body.name,
     req.body.description,
@@ -46,9 +40,7 @@ export async function putVillain(context: Context) {
   }
 }
 
-export async function deleteVillain(context: Context) {
-  const { req, res } = context;
-
+export async function deleteVillain({ req, res, log }: Context) {
   const { id } = req.params;
 
   try {
