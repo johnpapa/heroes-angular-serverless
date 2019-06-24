@@ -2,7 +2,15 @@
 
 TypeScript Node/Express 👉TypeScript Serverless ➕ Angular
 
-This project was created to help represent a fundamental app written with Angular. The heroes and villains theme is used throughout the app.
+This project was created to help represent a fundamental app written with Angular and Node.js/Express. The heroes and villains theme is used throughout the app. The app is migrated from Node.js/Express to Azure Functions.
+
+Structure:
+
+```
+- server    // Node.js Express server using TypeScript
+- src       // Angular front-end app
+- functions // Azure Functions APIs
+```
 
 ## The Story
 
@@ -22,7 +30,7 @@ I love JavaScript and the Web! One of the most common questions I hear is "which
 
 ## Live Demos
 
-Hosted in [Azure](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangular-github-jopapa)
+Hosted in [Azure](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroes_angular_serverless-github-jopapa)
 
 - [Tour of Heroes with Angular](https://papa-heroes-angular.azurewebsites.net)
 - [Tour of Heroes with React](https://papa-heroes-react.azurewebsites.net)
@@ -43,53 +51,27 @@ Hosted in [Azure](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangular
    npm install
    ```
 
-1. Run the app!
+1. Copy the `.env.example` file to `.env`
 
-   ```bash
-   npm run quick
-   ```
+1. Copy your Cosmos DB connection string and url into the supplied places in the `.env`
 
-## Cypress Tests
+    > If you have not tried Cosmos DB you can [try Cosmos DB for free here](https://azure.microsoft.com/en-us/try/cosmosdb?wt.mc_id=heroes_angular_serverless-github-jopapa)
 
-1. You can execute all of the UI tests by running the following steps
+1. Open the Command Palette in VS Code with `F1`
 
-   ```bash
-   npm run cypress
-   ```
+1. Type and select `View: Show Debug`
 
-## What's in the App
+1. Select the `Angular & Functions` debug configuration
 
-Each of these apps contain:
+1. Press `F5` or the green button to start the debugger
 
-- routing
-- lazy loading
-- container/presenter components
-- redux state management pattern
-- The same CSS
-
-### Why Cypress?
-
-Cypress.io makes it easy to run all three apps simultaneously in end to end tests, so you can watch the results while developing.
-
-### Why abstracted CSS?
-
-The goal of the project was to show how each framework can be designed to create the same app. Each uses their own specific techniques in a way that is tuned to each framework. However the one caveat I wanted to achieve was to make sure all of them look the same. While I could have used specific styling for each with scoped and styled components, I chose to create a single global styles file that they all share. This allowed me to provide the same look and feel, run the same cypress tests, and focus more on the HTML and JavaScript/TypeScript.
-
-### Why JSON Server?
-
-The app uses a JSON server for a backend by default. This allows you to run the code without needing any database engines or cloud accounts. Enjoy!
-
-### Why Docker?
-
-You can host the app any way you prefer. I chose Docker because it is familiar to me and makes it easy to run anywhere (local or cloud). You do you though and feel free to run this in yur own way.
+The function app and angular app both build, then execute, and finally the app is laucnhed in your browser at http://localhost:4200
 
 ## Problems or Suggestions
 
 [Open an issue here](/issues)
 
-## Thank You
-
-Thank you to [Sarah Drasner](https://twitter.com/), [Brian Holt](https://twitter.com/), [Chris Noring](https://twitter.com/), [Craig Shoemaker](https://twitter.com/), and [Ward Bell](https://twitter.com/wardbell) for providing input and reviewing the code in the three repos for the Angular, React, and Vue apps:
+## Related apps
 
 - [heroes-angular](https://github.com/johnpapa/heroes-angular)
 - [heroes-react](https://github.com/johnpapa/heroes-react)
@@ -97,15 +79,23 @@ Thank you to [Sarah Drasner](https://twitter.com/), [Brian Holt](https://twitter
 
 ## Resources
 
-- [VS Code](https://code.visualstudio.com?wt.mc_id=heroesangular-github-jopapa)
-- [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangular-github-jopapa)
-- [VS Code Extension for Node on Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=heroesangular-github-jopapa)
-- [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode?wt.mc_id=heroesangular-github-jopapa)
-- [VS Code - macOS keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf?WT.mc_id=heroesangular-github-jopapa)
-- [VS Code - Windows keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf?WT.mc_id=heroesangular-github-jopapa)
+Sign up for an [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroes_angular_serverless-github-jopapa)
+
+### Tools
+
+- [VS Code](https://code.visualstudio.com?wt.mc_id=heroes_angular_serverless-github-jopapa)
+- [VS Code Extension for Node on Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=heroes_angular_serverless-github-jopapa)
+- [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode?wt.mc_id=heroes_angular_serverless-github-jopapa)
+- [VS Code - macOS keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf?WT.mc_id=heroes_angular_serverless-github-jopapa)
+- [VS Code - Windows keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf?WT.mc_id=heroes_angular_serverless-github-jopapa)
+
+### Tutorials
+
+- [Static Website Tutorial](https://code.visualstudio.com/tutorials/static-website/getting-started?wt.mc_id=heroes_angular_serverless-github-jopapa)
+- [Serverless Function Tutorial](https://code.visualstudio.com/tutorials/functions-extension/getting-started?wt.mc_id=heroes_angular_serverless-github-jopapa)
 
 ### Debugging Resources
 
-- [Debugging Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial?wt.mc_id=heroesangular-github-jopapa)
-- [Debugging React in VS Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial?wt.mc_id=heroesangular-github-jopapa)
-- [Debugging Vue in VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial?wt.mc_id=heroesangular-github-jopapa)
+- [Debugging Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial?wt.mc_id=heroes_angular_serverless-github-jopapa)
+- [Debugging React in VS Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial?wt.mc_id=heroes_angular_serverless-github-jopapa)
+- [Debugging Vue in VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial?wt.mc_id=heroes_angular_serverless-github-jopapa)
