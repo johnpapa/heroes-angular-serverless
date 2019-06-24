@@ -4,7 +4,7 @@ const cosmos = require('@azure/cosmos');
 
 const endpoint = process.env.CORE_API_URL;
 const masterKey = process.env.CORE_API_KEY;
-const databaseDefName = 'vikings-db';
+const databaseDefName = 'hero-db';
 const heroContainerName = 'heroes';
 const villainContainerName = 'villains';
 const { CosmosClient } = cosmos;
@@ -16,4 +16,4 @@ const containers = {
   villains: client.database(databaseDefName).container(villainContainerName)
 };
 
-module.exports = { containers };
+module.exports = { containers, endpoint, masterKey, databaseDefName };

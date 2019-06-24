@@ -15,6 +15,14 @@
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      // Debug whichever file is open and focused
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "name": "Launch Relative File",
+      "args": ["${relativeFile}"]
     }
   ],
   "compounds": [
