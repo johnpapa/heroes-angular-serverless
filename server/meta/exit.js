@@ -6,4 +6,4 @@ function exit(message) {
   process.stdin.on('data', process.exit.bind(process, 0));
 }
 
-module.exports = { exit };
+module.exports = exit;
