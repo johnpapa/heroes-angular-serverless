@@ -31,4 +31,4 @@ const heroes = [
   }
 ];
 
-module.exports = { heroes };
+module.exports = heroes;

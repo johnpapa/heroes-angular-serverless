@@ -1,26 +1,18 @@
 // @ts-check
 require('dotenv').config(); // eslint-disable-line
 
-const { exit } = require('./exit');
-const { heroes } = require('./heroes');
-const { villains } = require('./villains');
+const cosmos = require('@azure/cosmos');
+
+const exit = require('./exit');
+const { databaseDefName, endpoint, masterKey } = require('../services/config');
+const heroes = require('./heroes');
+const villains = require('./villains');
 
 const captains = console;
-const { CosmosClient } = require('@azure/cosmos');
+const { CosmosClient } = cosmos;
+const client = new CosmosClient({ endpoint, auth: { masterKey } });
 
-const endpoint = process.env.CORE_API_URL || '';
-const masterKey = process.env.CORE_API_KEY || '';
-const databaseDefName = 'hero-db';
-const heroContainerName = 'heroes';
-const villainContainerName = 'villains';
-
-const options = { endpoint, auth: { masterKey } };
-const client = new CosmosClient(options);
-
-const containers = {
-  heroes: client.database(databaseDefName).container(heroContainerName),
-  villains: client.database(databaseDefName).container(villainContainerName)
-};
+process.env.DATA_OPTION = 'cloud_cosmos_sdk';
 
 go()
   .then(() => {
@@ -32,6 +24,7 @@ go()
 
 async function go() {
   // Delete the database
+  console.log(databaseDefName);
   await client.database(databaseDefName).delete();
   captains.log(`deleted database`);
 
@@ -41,32 +34,31 @@ async function go() {
   });
   captains.log(`created database ${database.id}`);
 
-  await bulkCreate(database, heroContainerName, heroes);
-  await bulkCreate(database, villainContainerName, villains);
+  await bulkCreate(database, 'heroes', heroes);
+  await bulkCreate(database, 'villains', villains);
+}
 
-  async function bulkCreate(database, containerDef, items) {
-    captains.log(`adding data to container ${database.id}`);
-    // Create the container
-    const containerDefinition = {
-      id: containerDef,
-      indexingPolicy: { automatic: true } // turn on indexes (default)
-      // indexingPolicy: { automatic: false }, // turn of indexes
-    };
-    const { container } = await database.containers.createIfNotExists(
-      containerDefinition
-    );
-    captains.log(`created container ${container.id}`);
+async function bulkCreate(database, containerDef, items) {
+  // Create the container
+  const containerDefinition = {
+    id: containerDef,
+    indexingPolicy: { automatic: true } // turn on indexes (default)
+    // indexingPolicy: { automatic: false }, // turn of indexes
+  };
+  const { container } = await database.containers.createIfNotExists(
+    containerDefinition
+  );
+  captains.log(`created container ${container.id}`);
 
-    // Insert the items
-    /* eslint-disable */
-    for (const item of items) {
-      const { body } = await container.items.create(item);
-      captains.log(`created item with content: `, body);
-    }
-    /* eslint-enable */
-
-    // Read the items
-    const { result } = await container.items.readAll().toArray();
-    captains.log(result);
+  // Insert the items
+  /* eslint-disable */
+  for (const item of items) {
+    const { body } = await container.items.create(item);
+    captains.log(`created item with content: `, body);
   }
+  /* eslint-enable */
+
+  // Read the items
+  const { result } = await container.items.readAll().toArray();
+  captains.log(result);
 }

@@ -17,6 +17,7 @@
       "webRoot": "${workspaceFolder}"
     },
     {
+      // Debug whichever file is open and focused
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}",
@@ -27,10 +28,7 @@
   "compounds": [
     {
       "name": "Angular & Functions",
-      "configurations": [
-        "Attach to Node Functions",
-        "Launch Angular"
-      ]
+      "configurations": ["Attach to Node Functions", "Launch Angular"]
     }
   ]
 }

@@ -1,24 +1,19 @@
 const villains = [
   {
-    id: 'VillainMadelyn',
-    name: 'Madelyn',
-    description: 'the cat whisperer'
+    id: 'VillainJohn',
+    name: 'John',
+    description: 'Slayer of JavaScript'
   },
   {
-    id: 'VillainHaley',
-    name: 'Haley',
-    description: 'pen wielder'
+    id: 'VillainSimona',
+    name: 'Simona',
+    description: 'Wielder of the Service Worker'
   },
   {
-    id: 'VillainElla',
-    name: 'Ella',
-    description: 'fashionista'
-  },
-  {
-    id: 'VillainLandon',
-    name: 'Landon',
-    description: 'Mandalorian mauler'
+    id: 'VillainAsim',
+    name: 'Asim',
+    description: 'The Hacker of Node'
   }
 ];
 
-module.exports = { villains };
+module.exports = villains;
