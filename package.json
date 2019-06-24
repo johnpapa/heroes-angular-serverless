@@ -1,15 +1,21 @@
 {
-  "name": "heroes-angular",
+  "name": "heroes-angular-serverless",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "start-with-node": "WWW=dist/heroes-angular node server.js",
+    "ng:serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "debug": "WWW=./dist npx nodemon -r dotenv/config --inspect=9229 server.js",
-    "local-proxy-debug": "concurrently \"npm run debug\" \"ng serve --proxy-config proxy.conf.json --open\""
+    "node:reset-db": "node -r dotenv/config --inspect-brk=localhost:9229 server/meta/create-database.js",
+    "node:build-ts": "tsc -p server",
+    "node:watch-ts": "tsc -w -p server",
+    "node:tslint": "tslint -c tslint.json -p server",
+    "node:debug": "WWW=./dist/heroes-angular-serverless npx nodemon -r dotenv/config --inspect=9229 server/dist/index.js",
+    "node:start": "WWW=./dist/heroes-angular-serverless node -r dotenv/config server/dist/index.js",
+    "node-ng:debug": "concurrently \"npm run node:debug\" \"npm run ng:serve\"",
+    "node-ng:start": "concurrently \"npm run node:start\" \"npm run ng:serve\"",
+    "start": "npm run ng:serve"
   },
   "private": true,
   "dependencies": {
@@ -32,10 +38,8 @@
     "@ngrx/store": "^8.0.1",
     "@ngrx/store-devtools": "^8.0.1",
     "angular-font-awesome": "^3.1.2",
-    "body-parser": "^1.18.3",
     "bulma": "^0.7.4",
     "core-js": "^2.5.4",
-    "express": "^4.16.4",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",

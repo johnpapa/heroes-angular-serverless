@@ -1,7 +1,11 @@
-// @ts-check
-const { heroes: container } = require('./config').containers;
+import { Response, Request } from 'express';
+// import { Context } from '@azure/functions';
+import { containers } from './config';
+import { Hero } from './models';
 
-async function getHeroes(req, res) {
+const { heroes: container } = containers;
+
+export async function getHeroes(req: Request, res: Response) {
   try {
     const { result: heroes } = await container.items.readAll().toArray();
     res.status(200).json(heroes);
@@ -10,12 +14,8 @@ async function getHeroes(req, res) {
   }
 }
 
-async function postHero(req, res) {
-  const hero = {
-    name: req.body.name,
-    description: req.body.description
-  };
-  hero.id = `Hero${hero.name}`;
+export async function postHero(req: Request, res: Response) {
+  const hero = new Hero(req.body.name, req.body.description);
 
   try {
     const { body } = await container.items.create(hero);
@@ -25,12 +25,8 @@ async function postHero(req, res) {
   }
 }
 
-async function putHero(req, res) {
-  const hero = {
-    id: req.params.id,
-    name: req.body.name,
-    description: req.body.description
-  };
+export async function putHero(req: Request, res: Response) {
+  const hero = new Hero(req.body.name, req.body.description, req.params.id);
 
   try {
     const { body } = await container.items.upsert(hero);
@@ -40,7 +36,7 @@ async function putHero(req, res) {
   }
 }
 
-async function deleteHero(req, res) {
+export async function deleteHero(req: Request, res: Response) {
   const { id } = req.params;
 
   try {
@@ -50,10 +46,3 @@ async function deleteHero(req, res) {
     res.status(500).send(error);
   }
 }
-
-module.exports = {
-  getHeroes,
-  postHero,
-  putHero,
-  deleteHero
-};

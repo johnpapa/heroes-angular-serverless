@@ -1,14 +1,14 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const routes = require('./routes');
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import { router } from './routes';
 
 const captains = console;
 
-function start() {
+export function start() {
   if (!process.env.NODE_ENV || !process.env.PORT) {
     captains.error(
       'ENV variables are missing.',
-      'Verify that you have set them directly or in a .env file.',
+      'Verify that you have set them directly or in a .env file.'
     );
     process.exit(1);
   } else {
@@ -23,11 +23,9 @@ function start() {
 
   app.use(express.static(www));
   captains.log(`serving ${www}`);
-  app.use('/api', routes);
+  app.use('/api', router);
   app.get('*', (req, res) => {
     res.sendFile(`index.html`, { root: www });
   });
   app.listen(port, () => captains.log(`listening on http://localhost:${port}`));
 }
-
-module.exports.start = start;

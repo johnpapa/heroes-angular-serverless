@@ -1,7 +1,10 @@
-// @ts-check
-const { villains: container } = require('./config').containers;
+import { Response, Request } from 'express';
+import { containers } from './config';
+import { Villain } from './models';
 
-async function getVillains(req, res) {
+const { villains: container } = containers;
+
+export async function getVillains(req: Request, res: Response) {
   try {
     const { result: villains } = await container.items.readAll().toArray();
     res.status(200).json(villains);
@@ -10,12 +13,8 @@ async function getVillains(req, res) {
   }
 }
 
-async function postVillain(req, res) {
-  const villain = {
-    name: req.body.name,
-    description: req.body.description
-  };
-  villain.id = `Villain${villain.name}`;
+export async function postVillain(req: Request, res: Response) {
+  const villain = new Villain(req.body.name, req.body.description);
 
   try {
     const { body } = await container.items.create(villain);
@@ -25,12 +24,12 @@ async function postVillain(req, res) {
   }
 }
 
-async function putVillain(req, res) {
-  const villain = {
-    id: req.params.id,
-    name: req.body.name,
-    description: req.body.description
-  };
+export async function putVillain(req: Request, res: Response) {
+  const villain = new Villain(
+    req.body.name,
+    req.body.description,
+    req.params.id
+  );
 
   try {
     const { body } = await container.items.upsert(villain);
@@ -40,7 +39,7 @@ async function putVillain(req, res) {
   }
 }
 
-async function deleteVillain(req, res) {
+export async function deleteVillain(req: Request, res: Response) {
   const { id } = req.params;
 
   try {
@@ -50,10 +49,3 @@ async function deleteVillain(req, res) {
     res.status(500).send(error);
   }
 }
-
-module.exports = {
-  getVillains,
-  postVillain,
-  putVillain,
-  deleteVillain
-};
