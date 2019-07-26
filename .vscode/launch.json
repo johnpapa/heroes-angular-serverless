@@ -10,7 +10,7 @@
       "port": 9229
     },
     {
-      "name": "Attach to Functions",
+      "name": "Attach to Node Functions",
       "type": "node",
       "request": "attach",
       "port": 9229,
@@ -35,8 +35,8 @@
   ],
   "compounds": [
     {
-      "name": "Launch Angular & Functions",
-      "configurations": ["Attach to Functions", "Launch Angular"]
+      "name": "Launch Angular & Node Functions",
+      "configurations": ["Attach to Node Functions", "Launch Angular"]
     },
     {
       "name": "Launch Angular & Node Server",

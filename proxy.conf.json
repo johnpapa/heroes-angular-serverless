@@ -1,8 +1,0 @@
-{
-  "/api": {
-    "target-function": "http://localhost:7071",
-    "target-node": "http://localhost:7627",
-    "target": "http://localhost:7071",
-    "secure": false
-  }
-}

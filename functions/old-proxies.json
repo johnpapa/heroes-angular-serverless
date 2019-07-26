@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "Client": {
+      "matchCondition": {
+        "route": "/{*restOfPath}"
+      },
+      "backendUri": "https://papamandaloreheroes.z20.web.core.windows.net/{restOfPath}"
+    },
+    "Func": {
+      "matchCondition": {
+        "route": "/api/{*restOfPath}"
+      },
+      "backendUri": "http://localhost:7071/api/{restOfPath}"
+    }
+  }
+}

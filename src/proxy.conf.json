@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target-function": "http://localhost:7071",
+    "target-node": "http://localhost:7627",
+    "target-cloudfunc": "https://papacotb001.azurewebsites.net/",
+    "target": "https://papacotb001.azurewebsites.net/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
