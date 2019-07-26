@@ -5,7 +5,6 @@ import { Hero } from './models';
 
 const { heroes: container } = containers;
 
-// TODO: log if you want
 export async function getHeroes({ req, res, log }: Context) {
   try {
     const { result: heroes } = await container.items.readAll().toArray();
