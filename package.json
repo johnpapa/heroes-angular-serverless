@@ -5,7 +5,7 @@
     "ng": "ng",
     "ng:serve": "ng serve",
     "proxy-setup": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "node-reset-db": "node -r dotenv/config --inspect-brk=localhost:9229 server/meta/create-database.js",
