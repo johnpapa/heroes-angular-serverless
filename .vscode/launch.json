@@ -2,6 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Node Server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "node-debug"],
+      "port": 9229
+    },
+    {
       "name": "Attach to Functions",
       "type": "node",
       "request": "attach",
@@ -27,8 +35,12 @@
   ],
   "compounds": [
     {
-      "name": "Angular & Functions",
-      "configurations": ["Attach to Node Functions", "Launch Angular"]
+      "name": "Launch Angular & Functions",
+      "configurations": ["Attach to Functions", "Launch Angular"]
+    },
+    {
+      "name": "Launch Angular & Node Server",
+      "configurations": ["Launch Node Server", "Launch Angular"]
     }
   ]
 }
