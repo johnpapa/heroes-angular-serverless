@@ -37,10 +37,6 @@
     {
       "name": "Launch Angular & Node Functions",
       "configurations": ["Attach to Node Functions", "Launch Angular"]
-    },
-    {
-      "name": "Launch Angular & Node Server",
-      "configurations": ["Launch Node Server", "Launch Angular"]
     }
   ]
 }
