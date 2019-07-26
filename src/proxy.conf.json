@@ -5,7 +5,7 @@
       "function": "http://localhost:7071",
       "cloudfunc": "https://papacotb001.azurewebsites.net/"
     },
-    "target": "http://localhost:7071",
+    "target": "http://localhost:7627",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

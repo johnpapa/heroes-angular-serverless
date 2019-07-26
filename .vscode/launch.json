@@ -35,8 +35,13 @@
   ],
   "compounds": [
     {
-      "name": "Launch Angular & Node Functions",
+      "name": "Launch Angular & Functions",
       "configurations": ["Attach to Node Functions", "Launch Angular"]
+    },
+
+    {
+      "name": "Launch Angular and Node",
+      "configurations": ["Launch Node Server", "Launch Angular"]
     }
   ]
 }
