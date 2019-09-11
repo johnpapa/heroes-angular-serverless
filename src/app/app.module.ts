@@ -11,14 +11,7 @@ import { EntityDataModule } from '@ngrx/data';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    CoreModule,
-    AppRoutingModule,
-    AppStoreModule,
-    EntityDataModule
-  ],
+  imports: [BrowserModule, HttpClientModule, CoreModule, AppRoutingModule, AppStoreModule, EntityDataModule],
   providers: [],
   bootstrap: [AppComponent]
 })
