@@ -1,9 +1,7 @@
 import containers from './config';
 const { heroes: container } = containers;
 
-async function getHeroes(context) {
-  const { req, res } = context;
-
+async function getHeroes({ req, res }) {
   try {
     const { result: heroes } = await container.items.readAll().toArray();
     res.status(200).json(heroes);
@@ -12,8 +10,7 @@ async function getHeroes(context) {
   }
 }
 
-async function postHero(context) {
-  const { req, res } = context;
+async function postHero({ req, res }) {
   const hero = {
     name: req.body.name,
     description: req.body.description,
@@ -29,8 +26,7 @@ async function postHero(context) {
   }
 }
 
-async function putHero(context) {
-  const { req, res } = context;
+async function putHero({ req, res }) {
   const hero = {
     id: req.params.id,
     name: req.body.name,
@@ -45,8 +41,7 @@ async function putHero(context) {
   }
 }
 
-async function deleteHero(context) {
-  const { req, res } = context;
+async function deleteHero({ req, res }) {
   const { id } = req.params;
 
   try {
