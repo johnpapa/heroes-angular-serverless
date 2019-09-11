@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppStoreModule } from './store/store.module';
 import { AboutComponent } from './about.component';
+import { EntityDataModule } from '@ngrx/data';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent],
@@ -15,7 +16,8 @@ import { AboutComponent } from './about.component';
     HttpClientModule,
     CoreModule,
     AppRoutingModule,
-    AppStoreModule
+    AppStoreModule,
+    EntityDataModule
   ],
   providers: [],
   bootstrap: [AppComponent]

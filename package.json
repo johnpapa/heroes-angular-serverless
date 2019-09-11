@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-free": "^5.4.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.7",
     "@fortawesome/free-solid-svg-icons": "^5.4.2",
+    "@ngrx/data": "^8.3.0",
     "@ngrx/effects": "^7.4.0",
     "@ngrx/entity": "^7.4.0",
     "@ngrx/store": "^7.4.0",
@@ -36,7 +37,6 @@
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "font-awesome": "^4.7.0",
-    "ngrx-data": "^6.1.0-beta.3",
     "rxjs": "~6.5.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
