@@ -1,7 +1,8 @@
-// @ts-check
-const { villains: container } = require('./config').containers;
+import { Request, Response } from 'express';
+import containers from './config';
+const { villains: container } = containers;
 
-async function getVillains(req, res) {
+async function getVillains(req: Request, res: Response) {
   try {
     const { result: villains } = await container.items.readAll().toArray();
     res.status(200).json(villains);
@@ -10,10 +11,11 @@ async function getVillains(req, res) {
   }
 }
 
-async function postVillain(req, res) {
+async function postVillain(req: Request, res: Response) {
   const villain = {
     name: req.body.name,
-    description: req.body.description
+    description: req.body.description,
+    id: undefined
   };
   villain.id = `Villain${villain.name}`;
 
@@ -25,7 +27,7 @@ async function postVillain(req, res) {
   }
 }
 
-async function putVillain(req, res) {
+async function putVillain(req: Request, res: Response) {
   const villain = {
     id: req.params.id,
     name: req.body.name,
@@ -40,7 +42,7 @@ async function putVillain(req, res) {
   }
 }
 
-async function deleteVillain(req, res) {
+async function deleteVillain(req: Request, res: Response) {
   const { id } = req.params;
 
   try {
@@ -51,9 +53,4 @@ async function deleteVillain(req, res) {
   }
 }
 
-module.exports = {
-  getVillains,
-  postVillain,
-  putVillain,
-  deleteVillain
-};
+export default { getVillains, postVillain, putVillain, deleteVillain };

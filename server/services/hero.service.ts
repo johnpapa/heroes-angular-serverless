@@ -1,7 +1,8 @@
-// @ts-check
-const { heroes: container } = require('./config').containers;
+import { Request, Response } from 'express';
+import containers from './config';
+const { heroes: container } = containers;
 
-async function getHeroes(req, res) {
+async function getHeroes(req: Request, res: Response) {
   try {
     const { result: heroes } = await container.items.readAll().toArray();
     res.status(200).json(heroes);
@@ -10,10 +11,11 @@ async function getHeroes(req, res) {
   }
 }
 
-async function postHero(req, res) {
+async function postHero(req: Request, res: Response) {
   const hero = {
     name: req.body.name,
-    description: req.body.description
+    description: req.body.description,
+    id: undefined
   };
   hero.id = `Hero${hero.name}`;
 
@@ -25,7 +27,7 @@ async function postHero(req, res) {
   }
 }
 
-async function putHero(req, res) {
+async function putHero(req: Request, res: Response) {
   const hero = {
     id: req.params.id,
     name: req.body.name,
@@ -40,7 +42,7 @@ async function putHero(req, res) {
   }
 }
 
-async function deleteHero(req, res) {
+async function deleteHero(req: Request, res: Response) {
   const { id } = req.params;
 
   try {
@@ -51,9 +53,4 @@ async function deleteHero(req, res) {
   }
 }
 
-module.exports = {
-  getHeroes,
-  postHero,
-  putHero,
-  deleteHero
-};
+export default { getHeroes, postHero, putHero, deleteHero };

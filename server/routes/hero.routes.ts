@@ -1,8 +1,7 @@
-const express = require('express');
-const services = require('../services');
+import * as express from 'express';
+import { heroService } from '../services';
 
 const router = express.Router();
-const { heroService } = services;
 
 router.get('/heroes', (req, res) => {
   heroService.getHeroes(req, res);
@@ -26,4 +25,4 @@ router.delete('/hero/:id', (req, res) => {
 //   heroService.queryHeroesNyName(req, res);
 // });
 
-module.exports = router;
+export const heroRoutes = router;
