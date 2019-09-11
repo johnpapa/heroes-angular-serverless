@@ -1,5 +1,5 @@
 {
-  "name": "heroes-angular",
+  "name": "heroes-angular-serverless",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,8 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "debug": "WWW=./dist npx nodemon -r dotenv/config --inspect=9229 server.js",
-    "local-proxy-debug": "concurrently \"npm run debug\" \"ng serve --proxy-config proxy.conf.json --open\""
+    "backend": "WWW=./dist node -r dotenv/config server.js",
+    "backend-debug": "WWW=./dist npx nodemon -r dotenv/config --inspect=9229 server.js",
+    "full-debug": "concurrently \"npm run backend-debug\" \"ng serve --proxy-config proxy.conf.json --open\"",
+    "full": "concurrently \"npm run backend\" \"ng serve --proxy-config proxy.conf.json --open\""
   },
   "private": true,
   "dependencies": {
