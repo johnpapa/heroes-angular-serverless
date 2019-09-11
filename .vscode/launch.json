@@ -19,7 +19,7 @@
   ],
   "compounds": [
     {
-      "name": "Do Em Both",
+      "name": "Debug Them Both",
       "configurations": ["Attach to Node Functions", "Launch Angular"]
     }
   ]
