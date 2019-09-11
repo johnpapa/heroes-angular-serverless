@@ -2,25 +2,37 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Attach to Node Functions",
-      "type": "node",
-      "request": "attach",
-      "port": 9229,
-      "preLaunchTask": "func: host start"
-    },
-    {
       "name": "Launch Angular",
       "type": "chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Node Express via NPM",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "backend-debug"],
+      "port": 9229
+    },
+    {
+      "name": "Attach to Node Functions",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "preLaunchTask": "func: host start"
     }
   ],
   "compounds": [
     {
-      "name": "Debug Them Both",
+      "name": "Debug Functions and Angular",
       "configurations": ["Attach to Node Functions", "Launch Angular"]
+    },
+    {
+      "name": "Debug Express and Angular",
+      "configurations": ["Launch Node Express via NPM", "Launch Angular"]
     }
   ]
 }
