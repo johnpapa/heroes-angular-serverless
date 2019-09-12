@@ -14,6 +14,35 @@ Comparative client apps written with Vue and React can be found at at [github.co
 
 I love Node and Express for creating APIs! These require a server and paying for that server in the cloud. Shifting to serverless alleviates the cost, the server upkeep, helps scale up and down easily, and reduces the surface are of the middleware required for a robust Express app. Is it perfect? No, of course not! But this is a solid option if these factors affect you.
 
+## Pre-Requisites
+
+1. We need a database. You can use the free [Azure Cosmos DB](https://azure.microsoft.com/en-us/try/cosmosdb/?wt.mc_id=heroesangularserverless-github-jopapa) trial. Or try the [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangularserverless-github-jopapa).
+2. Create an Azure Cosmos DB database and create the `/.env` and `/functions/local.settings.json` files
+
+`.env`
+
+```
+NODE_ENV=development
+PORT=7627
+WWW=./
+CORE_API_KEY=your-core-api-key-goes-here
+CORE_API_URL=https://papa-cosmos-api-db.documents.azure.com:443/
+```
+
+`/functions/local.settings.json`
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "CORE_API_KEY": "your-azure-cosmos-db-api-key-goes-here",
+    "CORE_API_URL": "https://your-azure-cosmos-db-url-goes-here:443/"
+  }
+}
+```
+
 ## Getting Started
 
 1. Clone this repository
@@ -29,25 +58,49 @@ I love Node and Express for creating APIs! These require a server and paying for
    npm install
    ```
 
-1. Build the app!
+1. Build the Node Express and the Angular code
 
    ```bash
    npm run node-ng:build
    ```
 
-1. Run the app!
+1. Run the app
 
    ```bash
    npm run node:start
    ```
 
-## Cypress Tests
+## Debug Node Express and Angular
 
-1. You can execute all of the UI tests by running the following steps
+1. Open `proxy.conf.json` and change the port to `7070`
 
-   ```bash
-   npm run cypress
-   ```
+1. Open the VS Code Command Palette `F1`
+
+1. Type `View: Show Debug` and press `ENTER`
+
+1. Select `Debug Express and Angular`
+
+1. Press `F5`
+
+1. Open the browser to <http://localhost:7070>
+
+You may now set break points in the Express and Angular code.
+
+## Debug Functions and Angular
+
+1. Open `proxy.conf.json` and change the port to `7071`
+
+1. Open the VS Code Command Palette `F1`
+
+1. Type `View: Show Debug` and press `ENTER`
+
+1. Select `Debug Functions and Angular`
+
+1. Press `F5`
+
+1. Open the browser to <http://localhost:7071>
+
+You may now set break points in the Functions and Angular code.
 
 ## Problems or Suggestions
 
@@ -55,12 +108,13 @@ I love Node and Express for creating APIs! These require a server and paying for
 
 ## Resources
 
-- [VS Code](https://code.visualstudio.com?wt.mc_id=heroesangularserverless-github-jopapa)
 - [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangularserverless-github-jopapa)
+- [VS Code](https://code.visualstudio.com?wt.mc_id=heroesangularserverless-github-jopapa)
 - [VS Code Extension for Node on Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=heroesangularserverless-github-jopapa)
 - [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode?wt.mc_id=heroesangularserverless-github-jopapa)
 - [VS Code - macOS keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf?WT.mc_id=heroesangularserverless-github-jopapa)
 - [VS Code - Windows keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf?WT.mc_id=heroesangularserverless-github-jopapa)
+- Tutorial to [Deploy to Azure Using Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started?WT.mc_id=heroesangularserverless-github-jopapa)
 
 ### Debugging Resources
 
