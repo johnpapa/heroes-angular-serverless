@@ -114,6 +114,7 @@ You may now set break points in the Functions and Angular code.
 - [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode?wt.mc_id=heroesangularserverless-github-jopapa)
 - [VS Code - macOS keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf?WT.mc_id=heroesangularserverless-github-jopapa)
 - [VS Code - Windows keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf?WT.mc_id=heroesangularserverless-github-jopapa)
+- Azure Functions [local.settings.json](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#local-settings-file?WT.mc_id=heroesangularserverless-github-jopapa) file
 - Tutorial to [Deploy to Azure Using Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started?WT.mc_id=heroesangularserverless-github-jopapa)
 
 ### Debugging Resources
@@ -121,3 +122,4 @@ You may now set break points in the Functions and Angular code.
 - [Debugging Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial?wt.mc_id=heroesangularserverless-github-jopapa)
 - [Debugging React in VS Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial?wt.mc_id=heroesangularserverless-github-jopapa)
 - [Debugging Vue in VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial?wt.mc_id=heroesangularserverless-github-jopapa)
+- [Tasks in VS Code](https://code.visualstudio.com/Docs/editor/tasks?wt.mc_id=heroesangularserverless-github-jopapa)
