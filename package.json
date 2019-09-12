@@ -3,15 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "archive-start-with-node": "WWW=dist/heroes-angular node server.js",
+    "ng:serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "backend": "WWW=./dist node -r dotenv/config server.js",
-    "backend-debug": "WWW=./dist nodemon -r dotenv/config --inspect=9229 server.js",
-    "full-debug": "concurrently \"npm run backend-debug\" \"ng serve --proxy-config proxy.conf.json --open\"",
-    "full": "concurrently \"npm run backend\" \"ng serve --proxy-config proxy.conf.json --open\""
+    "node:build-ts": "tsc -p server",
+    "node:watch-ts": "tsc -w -p server",
+    "node:tslint": "tslint -c tslint.json -p server",
+    "node:debug": "WWW=./dist/heroes-angular-serverless nodemon -r dotenv/config --inspect=9229 server/dist/index.js",
+    "node:start": "WWW=./dist/heroes-angular-serverless node -r dotenv/config server/dist/index.js",
+    "node-ng:debug": "concurrently \"npm run node:debug\" \"npm run ng:serve\"",
+    "node-ng:start": "concurrently \"npm run node:start\" \"npm run ng:serve\""
   },
   "private": true,
   "dependencies": {
