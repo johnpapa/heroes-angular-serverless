@@ -14,7 +14,7 @@
       "request": "launch",
       "name": "Launch Node Express via NPM",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run-script", "backend-debug"],
+      "runtimeArgs": ["run-script", "node:debug"],
       "port": 9229
     },
     {

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "ng:serve": "ng serve --proxy-config proxy.conf.json",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,8 +12,8 @@
     "node:tslint": "tslint -c tslint.json -p server",
     "node:debug": "WWW=./dist/heroes-angular-serverless nodemon -r dotenv/config --inspect=9229 server/dist/index.js",
     "node:start": "WWW=./dist/heroes-angular-serverless node -r dotenv/config server/dist/index.js",
-    "node-ng:debug": "concurrently \"npm run node:debug\" \"npm run ng:serve\"",
-    "node-ng:start": "concurrently \"npm run node:start\" \"npm run ng:serve\""
+    "node-ng:debug": "concurrently \"npm run node:debug\" \"npm run start\"",
+    "node-ng:start": "concurrently \"npm run node:start\" \"npm run start\""
   },
   "private": true,
   "dependencies": {
