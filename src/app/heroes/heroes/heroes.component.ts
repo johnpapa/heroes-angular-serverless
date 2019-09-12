@@ -55,7 +55,7 @@ export class HeroesComponent implements OnInit {
   }
 
   enableAddMode() {
-    this.selected = <any>{};
+    this.selected = {} as any;
   }
 
   getHeroes() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button-footer',
@@ -15,7 +15,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
     </button>
   `
 })
-export class ButtonFooterComponent implements OnInit {
+export class ButtonFooterComponent {
   @Input() label;
   @Input() className;
   @Input() iconClasses;
@@ -23,8 +23,6 @@ export class ButtonFooterComponent implements OnInit {
   @Input() dataId;
 
   @Output() clicked = new EventEmitter<any>();
-
-  ngOnInit() {}
 
   handleClick() {
     this.clicked.emit(this.item);
