@@ -22,7 +22,7 @@ function start() {
   captains.log(`serving ${www}`);
   app.use('/api', router);
   app.get('*', (req, res) => {
-    res.sendFile(`index.html`, { root: www });
+    res.sendFile('index.html', { root: www });
   });
   app.listen(port, () => captains.log(`listening on http://localhost:${port}`));
 }
