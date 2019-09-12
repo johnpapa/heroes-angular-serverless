@@ -4,7 +4,7 @@ const { heroes: container } = containers;
 
 async function getHeroes(req: Request, res: Response) {
   try {
-    const { result: heroes } = await container.items.readAll().toArray();
+    const { resources: heroes } = await container.items.readAll().fetchAll();
     res.status(200).json(heroes);
   } catch (error) {
     res.status(500).send(error);
@@ -20,8 +20,9 @@ async function postHero(req: Request, res: Response) {
   hero.id = `Hero${hero.name}`;
 
   try {
-    const { body } = await container.items.create(hero);
-    res.status(201).json(body);
+    const { item } = await container.items.create(hero);
+    const { resource } = await item.read();
+    res.status(201).json(resource);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -35,8 +36,9 @@ async function putHero(req: Request, res: Response) {
   };
 
   try {
-    const { body } = await container.items.upsert(hero);
-    res.status(200).json(body);
+    const partitionKey = hero.id;
+    const { resource } = await container.item(hero.id, partitionKey).replace(hero);
+    res.status(200).json(resource);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -46,8 +48,9 @@ async function deleteHero(req: Request, res: Response) {
   const { id } = req.params;
 
   try {
-    const { body } = await container.item(id).delete();
-    res.status(200).json(body);
+    const partitionKey = id;
+    const { resource } = await container.item(id, partitionKey).delete();
+    res.status(200).json(resource);
   } catch (error) {
     res.status(500).send(error);
   }

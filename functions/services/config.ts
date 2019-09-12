@@ -6,7 +6,7 @@ const databaseDefName = 'hero-db';
 const heroContainerName = 'heroes';
 const villainContainerName = 'villains';
 
-const client = new CosmosClient({ endpoint, auth: { masterKey } });
+const client = new CosmosClient({ endpoint, key: masterKey });
 
 const containers = {
   heroes: client.database(databaseDefName).container(heroContainerName),
