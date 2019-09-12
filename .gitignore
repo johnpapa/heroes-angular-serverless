@@ -5,8 +5,8 @@
 /data
 
 # compiled output
-/dist
-/dist-server
+dist
+server/dist
 /tmp
 /out-tsc
 
