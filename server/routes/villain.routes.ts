@@ -7,15 +7,15 @@ router.get('/villains', (req, res) => {
   villainService.getVillains(req, res);
 });
 
-router.post('/villain', (req, res) => {
+router.post('/villains', (req, res) => {
   villainService.postVillain(req, res);
 });
 
-router.put('/villain/:id', (req, res) => {
+router.put('/villains/:id', (req, res) => {
   villainService.putVillain(req, res);
 });
 
-router.delete('/villain/:id', (req, res) => {
+router.delete('/villains/:id', (req, res) => {
   villainService.deleteVillain(req, res);
 });
 

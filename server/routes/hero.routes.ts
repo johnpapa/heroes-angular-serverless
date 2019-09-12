@@ -7,15 +7,15 @@ router.get('/heroes', (req, res) => {
   heroService.getHeroes(req, res);
 });
 
-router.post('/hero', (req, res) => {
+router.post('/heroes', (req, res) => {
   heroService.postHero(req, res);
 });
 
-router.put('/hero/:id', (req, res) => {
+router.put('/heroes/:id', (req, res) => {
   heroService.putHero(req, res);
 });
 
-router.delete('/hero/:id', (req, res) => {
+router.delete('/heroes/:id', (req, res) => {
   heroService.deleteHero(req, res);
 });
 
