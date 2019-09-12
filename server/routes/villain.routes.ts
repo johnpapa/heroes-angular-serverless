@@ -1,8 +1,7 @@
-const express = require('express');
-const services = require('../services');
+import * as express from 'express';
+import { villainService } from '../services';
 
 const router = express.Router();
-const { villainService } = services;
 
 router.get('/villains', (req, res) => {
   villainService.getVillains(req, res);
@@ -20,4 +19,4 @@ router.delete('/villain/:id', (req, res) => {
   villainService.deleteVillain(req, res);
 });
 
-module.exports = router;
+export const villainRoutes = router;

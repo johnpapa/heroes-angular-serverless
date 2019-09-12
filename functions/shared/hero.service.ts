@@ -1,9 +1,8 @@
+import { Context } from '@azure/functions';
 import containers from './config';
 const { heroes: container } = containers;
 
-async function getHeroes(context) {
-  const { req, res } = context;
-
+async function getHeroes({ req, res }: Context) {
   try {
     const { result: heroes } = await container.items.readAll().toArray();
     res.status(200).json(heroes);
@@ -12,8 +11,7 @@ async function getHeroes(context) {
   }
 }
 
-async function postHero(context) {
-  const { req, res } = context;
+async function postHero({ req, res }: Context) {
   const hero = {
     name: req.body.name,
     description: req.body.description,
@@ -29,8 +27,7 @@ async function postHero(context) {
   }
 }
 
-async function putHero(context) {
-  const { req, res } = context;
+async function putHero({ req, res }: Context) {
   const hero = {
     id: req.params.id,
     name: req.body.name,
@@ -45,8 +42,7 @@ async function putHero(context) {
   }
 }
 
-async function deleteHero(context) {
-  const { req, res } = context;
+async function deleteHero({ req, res }: Context) {
   const { id } = req.params;
 
   try {

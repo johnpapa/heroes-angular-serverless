@@ -1,13 +1,10 @@
-// @ts-check
-
-const cosmos = require('@azure/cosmos');
+import { CosmosClient } from '@azure/cosmos';
 
 const endpoint = process.env.CORE_API_URL;
 const masterKey = process.env.CORE_API_KEY;
 const databaseDefName = 'hero-db';
 const heroContainerName = 'heroes';
 const villainContainerName = 'villains';
-const { CosmosClient } = cosmos;
 
 const client = new CosmosClient({ endpoint, auth: { masterKey } });
 
@@ -16,4 +13,4 @@ const containers = {
   villains: client.database(databaseDefName).container(villainContainerName)
 };
 
-module.exports = { containers };
+export default containers;
