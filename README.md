@@ -12,7 +12,7 @@ Comparative client apps written with Vue and React can be found at at [github.co
 
 ## Why
 
-I love Node and Express for creating APIs! These require a server and paying for that server in the cloud. Shifting to serverless alleviates the cost, the server upkeep, helps scale up and down easily, and reduces the surface are of the middleware required for a robust Express app. Is it perfect? No, of course not! But this is a solid option if these factors affect you.
+I love Node and Express for creating APIs! These require a server and paying for that server in the cloud. Shifting to serverless alleviates the cost, the server upkeep, helps scale up and down easily, and reduces the surface area of the middleware required for a robust Express app. Is it perfect? No, of course not! But this is a solid option if these factors affect you.
 
 ## Pre-Requisites
 
