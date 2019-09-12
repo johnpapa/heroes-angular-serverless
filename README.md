@@ -25,7 +25,7 @@ I love Node and Express for creating APIs! These require a server and paying for
 
 ```
 NODE_ENV=development
-PORT=7627
+PORT=7070
 WWW=./
 CORE_API_KEY=your-core-api-key-goes-here
 CORE_API_URL=https://papa-cosmos-api-db.documents.azure.com:443/
