@@ -6,7 +6,8 @@
 
 # compiled output
 /dist
-/dist-server
+/dist/server
+dist/server
 /tmp
 /out-tsc
 
@@ -41,5 +42,3 @@ project.lock.json
 appsettings.json
 local.settings.json
 
-node_modules
-node_modules
