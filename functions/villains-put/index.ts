@@ -1,10 +1,7 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
-import { villainService } from '../shared';
+import { villainService } from '../services';
 
-const httpTrigger: AzureFunction = async function(
-  context: Context,
-  req: HttpRequest
-): Promise<void> {
+const httpTrigger: AzureFunction = async function(context: Context, req: HttpRequest): Promise<void> {
   await villainService.putVillain(context);
 };
 
