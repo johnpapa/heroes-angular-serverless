@@ -26,9 +26,9 @@ I love Node and Express for creating APIs! These require a server and paying for
 ```
 NODE_ENV=development
 PORT=7070
-WWW=./
-CORE_API_KEY=your-core-api-key-goes-here
-CORE_API_URL=https://papa-cosmos-api-db.documents.azure.com:443/
+WWW="./"
+CORE_API_KEY="your-azure-cosmos-db-api-key-goes-here"
+CORE_API_URL="https://papa-cosmos-api-db.documents.azure.com:443/"
 ```
 
 Open the `/functions/local.settings.json` file and add the `CORE_API_KEY` and `CORE_API_URL` variables as shown below. Fill those values in with your database information.
