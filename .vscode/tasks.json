@@ -2,6 +2,38 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": [
+          "relative",
+          "${cwd}"
+        ],
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "Compiled |Failed to compile."
+          }
+        }
+      }
+    },
+    {
       "type": "func",
       "command": "host start",
       "problemMatcher": "$func-watch",
@@ -15,7 +47,7 @@
       "type": "shell",
       "label": "npm build",
       "command": "npm run build",
-      "dependsOn": ["func: extensions install", "npm install"],
+      "dependsOn": "npm install",
       "problemMatcher": "$tsc",
       "options": {
         "cwd": "${workspaceFolder}/functions"
@@ -37,35 +69,6 @@
       "problemMatcher": [],
       "options": {
         "cwd": "${workspaceFolder}/functions"
-      }
-    },
-    {
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "presentation": {
-        "focus": true,
-        "panel": "dedicated"
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": {
-        "owner": "typescript",
-        "source": "ts",
-        "applyTo": "closedDocuments",
-        "fileLocation": ["relative", "${cwd}"],
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "Compiled |Failed to compile."
-          }
-        }
       }
     }
   ]

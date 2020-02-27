@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "githubkey": "go here to generate a token https://github.com/settings/tokens",
+    "CORE_API_KEY": "cosmos key here",
+    "CORE_API_URL": "cosmos url here"
+  }
+}
