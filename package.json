@@ -10,7 +10,7 @@
     "node:build-ts": "tsc -p server",
     "node:watch-ts": "tsc -w -p server",
     "node:lint": "npm run node:build-ts && eslint \"server/**/*.ts\" --quiet --fix",
-    "node:debug": "WWW=./dist/heroes-angular nodemon dotenv/config --inspect=9229 server/dist/index.js",
+    "node:debug": "WWW=./dist/heroes-angular nodemon -r dotenv/config --inspect=9229 server/dist/index.js",
     "node:start": "WWW=./dist/heroes-angular node -r dotenv/config server/dist/index.js",
     "node-ng:build": "concurrently \"npm run node:build-ts\" \"npm run build\"",
     "node-ng:debug": "concurrently \"npm run node:debug\" \"npm run start\""
