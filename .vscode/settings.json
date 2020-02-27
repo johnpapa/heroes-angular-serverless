@@ -1,31 +1,22 @@
 {
   "workbench.colorCustomizations": {
-    "activityBar.background": "#3399ff",
-    "activityBar.activeBorder": "#bf0060",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#bf0060",
+    "activityBar.background": "#2f7c47",
+    "activityBar.activeBorder": "#422c74",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#422c74",
     "activityBarBadge.foreground": "#e7e7e7",
-    "titleBar.activeBackground": "#007fff",
-    "titleBar.inactiveBackground": "#007fff99",
+    "titleBar.activeBackground": "#215732",
+    "titleBar.inactiveBackground": "#21573299",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveForeground": "#e7e7e799",
-    "statusBar.background": "#007fff",
-    "statusBarItem.hoverBackground": "#3399ff",
+    "statusBar.background": "#215732",
+    "statusBarItem.hoverBackground": "#2f7c47",
     "statusBar.foreground": "#e7e7e7",
-    "panel.border": "#3399ff",
-    "sideBar.border": "#3399ff",
-    "editorGroup.border": "#3399ff",
-    "tab.activeBorder": "#3399ff"
+    "panel.border": "#2f7c47",
+    "sideBar.border": "#2f7c47",
+    "editorGroup.border": "#2f7c47",
+    "tab.activeBorder": "#2f7c47"
   },
-  "azureFunctions.projectRuntime": "~2",
-  "azureFunctions.projectLanguage": "TypeScript",
-  "azureFunctions.deploySubpath": "functions",
-  "azureFunctions.preDeployTask": "npm prune",
-  "files.exclude": {
-    "obj": true,
-    "bin": true
-  },
-  "debug.internalConsoleOptions": "neverOpen",
-  "peacock.color": "#007fff"
+  "peacock.color": "#215732"
 }
