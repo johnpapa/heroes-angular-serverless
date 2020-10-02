@@ -28,7 +28,7 @@ NODE_ENV=development
 PORT=7070
 WWW="./"
 CORE_API_KEY="your-azure-cosmos-db-api-key-goes-here"
-CORE_API_URL="https://papa-cosmos-api-db.documents.azure.com:443/"
+CORE_API_URL="https://papa-cosmos-api-db.documents.azure.com/?WT.mc_id=heroesangularserverless-github-jopapa"
 ```
 
 Open the `/functions/local.settings.json` file and add the `CORE_API_KEY` and `CORE_API_URL` variables as shown below. Fill those values in with your database information.
