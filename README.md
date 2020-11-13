@@ -16,7 +16,7 @@ I love Node and Express for creating APIs! These require a server and paying for
 
 ## Prerequisites
 
-1. We need a database. You can use the free [Azure Cosmos DB](https://azure.microsoft.com/en-us/try/cosmosdb/?wt.mc_id=heroesangularserverless-github-jopapa) trial. Or try the [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangularserverless-github-jopapa).
+1. We need a database. You can use the free [Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/?WT.mc_id=javascript-0000-jopapa) trial. Or try the [Azure Free Trial](https://azure.microsoft.com/free/?WT.mc_id=javascript-0000-jopapa).
 1. Create an Azure Cosmos DB database.
 1. Create a container named `heroes` and another named `villains`. Give each a partition key of `/id`. You can add data through the app later.
 1. Make a copy of the `env.example` file named `.env`, in the root of the project. It should contain the following code. Replace the `CORE_API_KEY` and `CORE_API_URL` variables with your Azure Cosmos DB information.
@@ -28,7 +28,7 @@ NODE_ENV=development
 PORT=7070
 WWW="./"
 CORE_API_KEY="your-azure-cosmos-db-api-key-goes-here"
-CORE_API_URL="https://papa-cosmos-api-db.documents.azure.com:443/"
+CORE_API_URL="https://papa-cosmos-api-db.documents.azure.com/?WT.mc_id=javascript-0000-jopapa"
 ```
 
 Open the `/functions/local.settings.json` file and add the `CORE_API_KEY` and `CORE_API_URL` variables as shown below. Fill those values in with your database information.
@@ -112,18 +112,18 @@ You may now set break points in the Functions and Angular code.
 
 ## Resources
 
-- [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesangularserverless-github-jopapa)
-- [VS Code](https://code.visualstudio.com?wt.mc_id=heroesangularserverless-github-jopapa)
-- [VS Code Extension for Node on Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=heroesangularserverless-github-jopapa)
-- [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode?wt.mc_id=heroesangularserverless-github-jopapa)
-- [VS Code - macOS keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf?WT.mc_id=heroesangularserverless-github-jopapa)
-- [VS Code - Windows keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf?WT.mc_id=heroesangularserverless-github-jopapa)
-- Azure Functions [local.settings.json](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#local-settings-file?WT.mc_id=heroesangularserverless-github-jopapa) file
-- Tutorial to [Deploy to Azure Using Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started?WT.mc_id=heroesangularserverless-github-jopapa)
+- [Azure Free Trial](https://azure.microsoft.com/free/?WT.mc_id=javascript-0000-jopapa)
+- [VS Code](https://code.visualstudio.com/?WT.mc_id=javascript-0000-jopapa)
+- [VS Code Extension for Node on Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=javascript-0000-jopapa)
+- [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode?WT.mc_id=javascript-0000-jopapa)
+- [VS Code - macOS keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf?WT.mc_id=javascript-0000-jopapa)
+- [VS Code - Windows keys](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf?WT.mc_id=javascript-0000-jopapa)
+- Azure Functions [local.settings.json](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=javascript-0000-jopapa#local-settings-file?WT.mc_id=heroesangularserverless-github-jopapa) file
+- Tutorial to [Deploy to Azure Using Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started?WT.mc_id=javascript-0000-jopapa)
 
 ### Debugging Resources
 
-- [Debugging Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial?wt.mc_id=heroesangularserverless-github-jopapa)
-- [Debugging React in VS Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial?wt.mc_id=heroesangularserverless-github-jopapa)
-- [Debugging Vue in VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial?wt.mc_id=heroesangularserverless-github-jopapa)
-- [Tasks in VS Code](https://code.visualstudio.com/Docs/editor/tasks?wt.mc_id=heroesangularserverless-github-jopapa)
+- [Debugging Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial?WT.mc_id=javascript-0000-jopapa)
+- [Debugging React in VS Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial?WT.mc_id=javascript-0000-jopapa)
+- [Debugging Vue in VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial?WT.mc_id=javascript-0000-jopapa)
+- [Tasks in VS Code](https://code.visualstudio.com/Docs/editor/tasks?WT.mc_id=javascript-0000-jopapa)
