@@ -39,7 +39,7 @@
     "body-parser": "^1.19.0",
     "bulma": "^0.7.5",
     "core-js": "^2.6.9",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
